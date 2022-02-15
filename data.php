@@ -19,7 +19,7 @@
     <script src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/modernizr.custom.js"></script>
    
-   <title>Data Pemngukuran Kualitas Udara Kadang Sapi</title>
+   <title>Data Pengukuran Kualitas Udara Kadang Sapi</title>
 	<link rel="stylesheet" type="text/css" href="tabel.css">
 <script src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/modernizr.custom.js"></script>
