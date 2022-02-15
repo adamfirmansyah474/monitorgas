@@ -79,6 +79,7 @@ endif;?>
 					<li> <a href="grafik.php" class="smoothScroll">Grafik Gas</a></li>
 					<li> <a href="logout process.php" class="smoothScroll">Log Out</a></li>
 				</ul>
+
 	        </div><!--/.nav-collapse -->
 	      </div>
 	    </div>

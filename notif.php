@@ -30,6 +30,7 @@ if($h2s > 100 && $nh3 > 100){
     focusConfirm: false,
     focusCancel: true});
 </script>";
+var_dump($alert);
 }else if ($h2s > 100){
 	$alert = "<script>
   swal({  title: 'Bersihkan kadang dari air kencing sapi',
@@ -40,11 +41,12 @@ if($h2s > 100 && $nh3 > 100){
     focusConfirm: false,
     focusCancel: true});
 </script>";
+var_dump($alert);
 
 }else {
 	$alert = "";
 }
-var_dump($alert);
+
 
 
 ?>

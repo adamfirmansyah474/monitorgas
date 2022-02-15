@@ -34,7 +34,7 @@ $result = mysqli_query($con, "SELECT * FROM sensor ORDER BY id DESC");
                         <h3 style="margin-top: 40px;  text-decoration: none;">Grafik Monitoring</h3>
                         <div class="row" style="margin-top: 50px; margin-left: 250px;">
                             
-                            <div class="col-md-10" style="height: 100px; width: 600px;margin-top: 250px;">
+                            <div class="col-md-10" style="height: 100px; width: 600px;margin-top: 50px;">
                                 <h2>Grafik Gas Amoniak dan Hidrogen Sulfida</h2>
                                 <canvas id="datagrafik"></canvas>
                             </div>
