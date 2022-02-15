@@ -1,7 +1,7 @@
 <?php
 //variabel data
-$con = mysqli_connect("localhost","root","","ta");
-
+//$con = mysqli_connect("localhost","root","","ta");
+require "koneksi.php";
 // Check connection
 if (mysqli_connect_errno())
   {
