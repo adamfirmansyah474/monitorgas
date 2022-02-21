@@ -42,7 +42,7 @@ endif;?>
     	$(document).ready(function() {
     		setInterval(function(){
     				$("#notif").load('notif.php');
-    		}, 60000);
+    		}, 15000);
     	});
 
     </script>

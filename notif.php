@@ -14,7 +14,7 @@ $h2s=$data_h2s["h2s"];
 
 if($h2s > 100 && $nh3 > 100){
 	$alert = "<script>
-  swal({  title: 'bersihkan kotoran yang menumpuk pada kandang',
+  swal({  title: 'bersihkan kotoran dan urin sapi yang menumpuk pada kandang',
     type: 'info',
     showCancelButton: true,
     confirmButtonColor: '#ff0055',
@@ -48,6 +48,7 @@ var_dump($alert);
 }else {
 	$alert = "";
 }
+var_dump($alert);
 
 
 
