@@ -33,15 +33,51 @@ $result = mysqli_query($con, "SELECT * FROM sensor ORDER BY id DESC");
                     <div class="heading">
                         <h3 style="margin-top: 40px;  text-decoration: none;">Grafik Monitoring</h3>
                         <div class="row" style="margin-top: 50px; margin-left: 250px;">
-                            
+                            <div class="card">
+                                <form method="get" action="">
+                                    <label>Tanggal</label>
+                                    <input type="date" name="tgl">
+                                    <button name="submit" class="btn btn-primary">Submit</button>
+                                </form>
+                            </div>
                             <div class="col-md-10" style="height: 100px; width: 600px;margin-top: 50px;">
                                 <h2>Grafik Gas Amoniak dan Hidrogen Sulfida</h2>
                                 <canvas id="datagrafik"></canvas>
                             </div>
                             
                             <?php
-                            require 'datagrafik.php';
-                           
+                            if(empty($_GET['submit']) && empty($_GET['tgl'])){
+                                    $jam = "";
+                            $jumlahnh3 = null;
+                            $jumlahh2s = null;
+                            $result1 = mysqli_query($con, "SELECT hour(tgl) as date, nh3, h2s  from sensor where day(tgl) = day(now()) GROUP BY hour(tgl) ORDER BY Date ASC Limit 25");
+                            while ($row = mysqli_fetch_array($result1)) {
+                                $jams = $row['date'];
+                                $jam .= "'$jams'" . ",";
+                                $nh3 = $row['nh3'];
+                                $jumlahnh3 .= "'$nh3'" . ",";
+                                $h2s = $row['h2s'];
+                                $jumlahh2s .= "'$h2s'" . ",";
+                            }
+                            }else if (isset($_GET['submit'])) {
+                                if (isset($_GET['tgl'])) {
+                            $tgl = $_GET['tgl'];
+                            $jam = "";
+                            $jumlahnh3 = null;
+                            $jumlahh2s = null;
+                            $result1 = mysqli_query($con, "SELECT hour(tgl) as date, nh3, h2s  from sensor where left(tgl,10) = '$tgl' GROUP BY hour(tgl) ORDER BY Date ASC Limit 25");
+                            while ($row = mysqli_fetch_array($result1)) {
+                                $jams = $row['date'];
+                                $jam .= "'$jams'" . ",";
+                                $nh3 = $row['nh3'];
+                                $jumlahnh3 .= "'$nh3'" . ",";
+                                $h2s = $row['h2s'];
+                                $jumlahh2s .= "'$h2s'" . ",";
+
+                                    }    
+                            }
+                            }
+
                             ?>
                             <script>
                                 var ctx = document.getElementById("datagrafik").getContext('2d');

@@ -17,7 +17,7 @@
     }
 
     $jumlahh2s = null;
-    $result2 = mysqli_query($con, "SELECT h2s from sensor where day(tgl) = day(now())  GROUP BY hour(tgl) ORDER BY tgl ASC Limit 25");
+    $result2 = mysqli_query($con, "SELECT h2s from sensor where day(tgl) = day(now()-1)  GROUP BY hour(tgl) ORDER BY tgl ASC Limit 25");
     while ($row = mysqli_fetch_array($result2)) {
         $h2s = $row['h2s'];
         $jumlahh2s .= "'$h2s'" . ",";
