@@ -22,6 +22,7 @@ if($h2s > 100 && $nh3 > 100){
     focusConfirm: false,
     focusCancel: true});
 </script>";
+echo $alert;
 }else if ($nh3 > 100){
 	$alert = "<script>
   swal({  title: 'Bersihkan kadang dari kotoran yang menumpuk',
@@ -32,7 +33,7 @@ if($h2s > 100 && $nh3 > 100){
     focusConfirm: false,
     focusCancel: true});
 </script>";
-$alert);
+echo $alert;
 }else if ($h2s > 100){
 	$alert = "<script>
   swal({  title: 'Bersihkan kadang dari air kencing sapi',
@@ -43,12 +44,12 @@ $alert);
     focusConfirm: false,
     focusCancel: true});
 </script>";
-$alert;
+echo $alert;
 
 }else {
 	$alert = "";
 }
-$alert;
+echo $alert;
 
 
 
