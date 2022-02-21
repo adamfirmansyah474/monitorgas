@@ -48,7 +48,7 @@ var_dump($alert);
 }else {
 	$alert = "";
 }
-var_dump($alert);
+$alert;
 
 
 
